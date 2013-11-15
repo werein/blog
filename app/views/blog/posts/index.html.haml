@@ -1,0 +1,11 @@
+%section#content.span9
+  %header.title
+    %h1= t '.title'
+    = create_button Blog::Post
+  .content
+    = render @posts
+  = paginate @posts
+
+.sidebar.right.span3
+  = auto_discovery_link_tag :atom, posts_path(:atom)
+  = render_cell 'blog/category', :show

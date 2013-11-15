@@ -1,0 +1,5 @@
+cs:
+  routes:
+    blog: blog
+    posts: prispevky
+    categories: kategorie

@@ -1,0 +1,45 @@
+en:
+  created_updated_at: &cuat
+    created_at: Created at
+    updated_at: Updated at
+  activerecord:
+    models:
+      translation: &translation
+        one: Translation
+        other: Translations     
+      blog:
+        one: Blog
+        other: Blog
+      blog/post:
+        one: Post
+        other: Posts
+      blog/post/translation:
+        <<: *translation
+      blog/category:
+        one: Category
+        other: Categories
+      blog/category/translation:
+        <<: *translation
+
+    attributes:
+      blog/post:
+        image: Image
+        translations: Translations
+        categories: Categories
+        <<: *cuat
+      blog/post/translation:
+        title: Title
+        locale: Locale
+        content: Content
+        <<: *cuat
+      blog/category:
+        image: Image
+        parent: Parent
+        translations: Translations
+        posts: Posts
+        <<: *cuat
+      blog/category/translation:
+        title: Title
+        locale: Locale
+        content: Content
+        <<: *cuat

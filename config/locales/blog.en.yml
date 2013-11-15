@@ -1,0 +1,30 @@
+# config/locales/en.yml
+en:
+  blog:
+    posts:
+      index:
+        title: Posts
+      new:
+        title: New post
+        rails_admin: If you want to create post in admin area, please click here.
+      edit:
+        title: Edit post
+        rails_admin: If you want to update post in admin area, please click here.
+      create:
+        notice: Post was successfully created.
+      update:
+        notice: Post was successfully updated.
+      destroy:
+        notice: Post was successfully deleted.
+      form:
+        translations:
+          title: Translations
+          new: New translation
+    post:
+      new: Create new post
+    cells:
+      categories: Categories
+      related: Related posts
+    categories:
+      update:
+        notice: Category was successfully updated.

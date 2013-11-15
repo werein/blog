@@ -1,0 +1,11 @@
+en:
+  enumerize:
+    locale: &locale
+      locale:
+        cs: Czech
+        en: English
+        de: Germany
+    blog/category/translation:
+      <<: *locale
+    blog/post/translation:
+      <<: *locale

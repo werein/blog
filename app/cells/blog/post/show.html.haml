@@ -1,0 +1,7 @@
+.row
+  - @posts.each do |post|
+    %article.post.span4
+      %header
+        %h2= link_to post.title, blog.post_path(post)
+        = image_tag(post.image.thumb, class: 'span4 no-left') if post.image?
+      = extract post.content, truncate: 260

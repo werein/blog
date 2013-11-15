@@ -1,0 +1,19 @@
+%section#content.span9
+  = manage_buttons @post, group_class: 'btn-group-show'
+  - if @post.localized?
+    %article
+      %header
+        %h1= editable @post, :title, nested: :translations, nid: @post.translation.id, e: @post.title
+        %time.post-date{datetime: @post.created_at}= time_ago_in_words @post.created_at
+      = image_tag @post.image.wide_large, class: 'img-polaroid' if @post.image?
+      .content
+        = @post.content.html_safe
+      %footer
+        #disqus_thread
+          = disqus_thread.html_safe
+  - else
+    = render 'core/shared/tna', object: @post
+
+.sidebar.right.span3
+  = render_cell 'blog/category', :show
+  = render_cell 'blog/post', :related, post: @post, limit: 5

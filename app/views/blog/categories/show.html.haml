@@ -1,0 +1,10 @@
+%section#content.span9
+  %header.title
+    %h1= editable @category, :title, nested: :translations, nid: @category.translation.id, e: @category.title
+    = create_button Blog::Post
+  = render @posts
+  = paginate @posts
+
+.sidebar.right.span3
+  = auto_discovery_link_tag(:atom, posts_path(:atom))
+  = render_cell 'blog/category', :show

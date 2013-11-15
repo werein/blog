@@ -1,0 +1,5 @@
+en:
+  routes:
+    blog: blog
+    posts: posts
+    categories: categories
