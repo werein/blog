@@ -6,7 +6,7 @@ module Blog
     append_view_path 'app/views'
 
     def show args = {}
-      @posts = Blog::Post.with_translations(I18n.locale).order(args[:order] || 'blog_posts.created_at ASC').limit(args[:limit] || 10)
+      @posts = Blog::Post.with_translations(I18n.locale).latest.limit(args[:limit] || 10)
       args[:view] ? render(view: args[:view]) : render unless @posts.empty?
     end
 
