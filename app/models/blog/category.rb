@@ -10,7 +10,7 @@ module Blog
     
     has_ancestry
 
-    mount_uploader :image, Uploadable::ImageUploader
+    mount_uploader :image, Uploadable::Image
     store_in_background :image
 
     scope :himself, ->(o) { where.not(id: o.id) }
