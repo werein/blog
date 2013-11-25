@@ -1,12 +1,16 @@
 %article.post
-  %header
-    %h1= editable post, :title, nested: :translations, nid: post.translation.id, e: link_to(post.title, post)
-  .row-fluid
+  .row
+    - col = post.image? ? 'col-md-7' : 'col-md-12'
     - if post.image?
-      .image.span5
-        = link_to image_tag(post.image.thumb, class: 'img-polaroid'), post if post.image?
-    .content{class: post.image? ? 'span7' : 'span12'}
-      = extract post.content, truncate: 190
-  %footer.right
-    %time.date{datetime: post.created_at}= time_ago_in_words post.created_at
-    = manage_buttons post, button_class: 'btn-small', list: true
+      .ilustration.col-md-5
+        = link_to image_tag(post.image.thumb, class: 'img-responsive'), post if post.image?
+    %div{class: col}
+      = manage_icons post, list: false
+      %header
+        .right
+          %h2
+            %small
+              = t '.published', at: time_ago_in_words(post.created_at)
+            = editable post, :title, nested: :translations, nid: post.translation.id, e: link_to(post.title, post)
+      .content.justify
+        = extract post.content, truncate: 190

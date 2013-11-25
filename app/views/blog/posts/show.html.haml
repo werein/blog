@@ -1,12 +1,14 @@
-%section#content.span9
+%section#content.col-md-8
   = manage_buttons @post, group_class: 'btn-group-show'
   - if @post.localized?
     %article
       %header
-        %h1= editable @post, :title, nested: :translations, nid: @post.translation.id, e: @post.title
-        %time.post-date{datetime: @post.created_at}= time_ago_in_words @post.created_at
-      = image_tag @post.image.wide_large, class: 'img-polaroid' if @post.image?
-      .content
+        %h1= editable @post, :title, nested: :translations, nid: @post.translation.id, placement: :bottom
+        .right
+          %time.post-date{datetime: @post.created_at}
+            = t '.published', at: time_ago_in_words(@post.created_at)
+      = image_tag @post.image.wide_large, class: 'ilustration img-responsive' if @post.image?
+      .content.justify
         = @post.content.html_safe
       %footer
         #disqus_thread
@@ -14,6 +16,6 @@
   - else
     = render 'core/shared/tna', object: @post
 
-.sidebar.right.span3
-  = render_cell 'blog/category', :show
+.sidebar.right.col-md-4
+  = render_cell 'blog/category', :show, view: :accordion_menu
   = render_cell 'blog/post', :related, post: @post, limit: 5

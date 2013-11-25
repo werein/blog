@@ -1,10 +1,10 @@
-%section#content.span9
+%section#content.col-md-8
   %header.title
-    %h1= editable @category, :title, nested: :translations, nid: @category.translation.id, e: @category.title
+    %h1= editable @category, :title, nested: :translations, nid: @category.translation.id, placement: :bottom
     = create_button Blog::Post
   = render @posts
   = paginate @posts
 
-.sidebar.right.span3
+.sidebar.right.col-md-4
   = auto_discovery_link_tag(:atom, posts_path(:atom))
-  = render_cell 'blog/category', :show
+  = render_cell 'blog/category', :show, view: :accordion_menu
