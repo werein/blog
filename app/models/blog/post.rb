@@ -9,7 +9,7 @@ module Blog
     has_and_belongs_to_many :categories
     validates :categories, presence: true
 
-    mount_uploader :image, Uploadable::ImageUploader
+    mount_uploader :image, Uploadable::Image
     store_in_background :image
 
     paginates_per 10
@@ -17,5 +17,9 @@ module Blog
     scope :latest, ->{ order('blog_posts.updated_at DESC') }
     scope :published, ->{ where(published: true) }
     scope :himself, ->(o) { where.not(id: o.id) }
+
+    def to_s
+      title
+    end
   end
 end
