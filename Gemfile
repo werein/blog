@@ -16,6 +16,7 @@ gemspec
 # Use head version of engines
 gem 'uploadable', git: 'git@git.imin.cz:project/uploadable.git', branch: 'master'
 gem 'testable', git: 'git@git.imin.cz:project/testable.git', branch: 'master'
+gem 'ckeditor-outsourced', git: 'git@git.imin.cz:project/ckeditor-outsourced.git', branch: 'master'
 
 gem 'core', git: 'git@git.imin.cz:project/core.git', branch: 'master'
 gem 'auth', git: 'git@git.imin.cz:project/auth.git', branch: 'master'
