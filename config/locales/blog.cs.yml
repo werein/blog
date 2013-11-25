@@ -7,11 +7,13 @@ cs:
       new:
         title: Vytvořit příspěvek
         rails_admin: Nyní jste v režimu rychlého vytvoření příspěvku. Pro vytvoření v administrátorském rozhraní klikněte zde.
+      create:
+        notice: Příspěvek vytvořen
+      show:
+        published: 'Publikováno před %{at}'
       edit:
         title: Úprava příspěvku
         rails_admin: Nyní jste v režimu rychlé editace příspěvku. Pro úpravu v administrátorském rozhraní klikněte zde.
-      create:
-        notice: Příspěvek vytvořen
       update:
         notice: Příspěvek aktualizován
       destroy:
@@ -20,6 +22,8 @@ cs:
         translations:
           title: Překlady
           new: Přidat překlad
+      post:
+        published: 'před %{at}'
     post:
       new: Vytvořit příspěvek
     cells:

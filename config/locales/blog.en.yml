@@ -7,11 +7,13 @@ en:
       new:
         title: New post
         rails_admin: If you want to create post in admin area, please click here.
+      create:
+        notice: Post was successfully created.
+      show:
+        published: 'Published before %{at}'
       edit:
         title: Edit post
         rails_admin: If you want to update post in admin area, please click here.
-      create:
-        notice: Post was successfully created.
       update:
         notice: Post was successfully updated.
       destroy:
@@ -20,6 +22,8 @@ en:
         translations:
           title: Translations
           new: New translation
+      post:
+        published: 'before %{at}'
     post:
       new: Create new post
     cells:
