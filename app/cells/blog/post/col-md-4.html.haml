@@ -1,0 +1,8 @@
+%section.cell.blog-post
+  .row
+    - @posts.each do |post|
+      %article.post.col-md-4
+        %header
+          %h3= link_to extract(post.title, truncate: 60), blog.post_path(post)
+        .content.justify
+          = extract post.content, truncate: 160

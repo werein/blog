@@ -1,7 +1,9 @@
-.row
+%section.cell.blog-post.show
+  %header.center
+    %h2= t '.title'
   - @posts.each do |post|
-    %article.post.span4
+    %article.post
       %header
-        %h2= link_to post.title, blog.post_path(post)
-        = image_tag(post.image.thumb, class: 'span4 no-left') if post.image?
-      = extract post.content, truncate: 260
+        %h3= link_to extract(post.title, truncate: 60), blog.post_path(post)
+      .content.justify
+        = extract post.content, truncate: 160

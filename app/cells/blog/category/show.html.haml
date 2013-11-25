@@ -1,6 +1,6 @@
-%section.cell.blog.categories
-  %header
-    %h1= t 'blog.cells.categories'
+%section.cell.blog-categories.show
+  %header.center
+    %h2= t '.title'
   .content
     - @categories.each do |category|
       %h2= link_to category.title, blog.category_path(category)

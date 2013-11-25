@@ -1,11 +1,9 @@
-%section.cell.blog.related
-  %header
-    %h1= t 'blog.cells.related'
+%section.cell.blog-post.related
+  %header.center
+    %h2= t '.title'
   - @related_posts.each do |post|
     %article.post
       %header
-        %h3= link_to truncate(post.title, length: 60), blog.post_path(post)
-      .image
-        = link_to image_tag(post.image.thumb), post if post.image?
-      .content
-        = post.content.truncate(60)
+        %h3= link_to extract(post.title, truncate: 60), blog.post_path(post)
+      .content.justify
+        = extract post.content, truncate: 160
