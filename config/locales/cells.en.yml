@@ -1,0 +1,12 @@
+en:
+  blog:
+    category:
+      accordion_menu:
+        title: Categories
+      show:
+        title: Categories
+    post:
+      show:
+        title: Posts
+      related:
+        title: Related
