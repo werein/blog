@@ -1,11 +1,11 @@
 %article.post
+  = manage_icons post, list: false
   .row
     - col = post.image? ? 'col-md-7' : 'col-md-12'
     - if post.image?
       .ilustration.col-md-5
-        = link_to image_tag(post.image.thumb, class: 'img-responsive'), post if post.image?
+        = link_to image_tag(post.image.landscape.thumb, class: 'img-responsive'), post if post.image?
     %div{class: col}
-      = manage_icons post, list: false
       %header
         .right
           %h2

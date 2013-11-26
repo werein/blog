@@ -7,7 +7,7 @@
         .right
           %time.post-date{datetime: @post.created_at}
             = t '.published', at: time_ago_in_words(@post.created_at)
-      = image_tag @post.image.wide_large, class: 'ilustration img-responsive' if @post.image?
+      = image_tag @post.image.original, class: 'ilustration img-responsive' if @post.image?
       .content.justify
         = @post.content.html_safe
       %footer
