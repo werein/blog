@@ -22,6 +22,7 @@ module Blog
 
     def new
       @post = Post.new
+      @post.translations.build
       respond_with @post
     end
 
