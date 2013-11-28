@@ -2,3 +2,25 @@
 # task :blog do
 #   # Task goes here
 # end
+
+namespace :blog do
+  namespace :post do 
+    desc "Regenerate all images on post"
+    task recreate_versions: :environment do 
+      Blog::Post.all.each do |i|
+        i.process_image_upload = true
+        i.image.recreate_versions!
+      end
+    end
+  end
+
+  namespace :category do 
+    desc "Regenerate all images on category"
+    task recreate_versions: :environment do 
+      Blog::Category.all.each do |i|
+        i.process_image_upload = true
+        i.image.recreate_versions!
+      end
+    end
+  end
+end
