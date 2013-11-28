@@ -1,5 +1,5 @@
 %section#content.col-md-8
-  = manage_buttons @post, group_class: 'btn-group-show'
+  = manage_icons @post, list: true
   - if @post.localized?
     %article
       %header
@@ -16,6 +16,6 @@
   - else
     = render 'core/shared/tna', object: @post
 
-.sidebar.right.col-md-4
+.sidebar.sidebar-right.col-md-4
   = render_cell 'blog/category', :show, view: :accordion_menu
   = render_cell 'blog/post', :related, post: @post, limit: 5

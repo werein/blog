@@ -1,8 +1,6 @@
 = rails_admin_alert @post
 
-=# javascript_include_tag 'ckeditor/override'
-=# javascript_include_tag 'ckeditor/init'
-= simple_nested_form_for @post, html: { class: 'form-horizontal' } do |f|
+= simple_nested_form_for @post, nested_wrapper: :bootstrap3_horizontal do |f|
   = render 'core/shared/errors', object: @post
 
   = f.input :image
@@ -16,10 +14,10 @@
   .tab-content.translations
     = f.simple_fields_for :translations, nested_wrapper: false do |t|
       .fields.tab-pane{id: "translation_#{t.index}", class: ("active" if t.index == 0)}
-        = t.link_to_remove si('btn btn-danger btn-small pull-right','glyphicon glyphicon-remove')
+        .right
+          = t.link_to_remove si('btn btn-danger','glyphicon glyphicon-remove')
         = t.input :title
         = t.input :slug
         = t.input :locale
         = t.input :content, as: :ckeditor
-  %hr/
   = f.button :submit, t('misc.submit'), class: 'btn btn-block btn-large btn-info'
