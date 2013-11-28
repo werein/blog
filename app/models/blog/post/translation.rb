@@ -10,7 +10,9 @@ module Blog
 
     enumerize :locale, in: I18n.available_locales
 
-    def to_s; title; end
+    def to_s 
+      title? ? title : 'new post'
+    end
 
     private
       def set_slug
