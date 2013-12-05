@@ -1,8 +1,10 @@
 module Blog
   class Post < ActiveRecord::Base
     translates :slug, :title, :content
+    validates :translations, presence: :true
     include Core::Concerns::Localizable
-
+    
+    # Use, when you want to remove id from url
     extend FriendlyId
     friendly_id :title, use: :slugged
 
@@ -18,8 +20,8 @@ module Blog
     scope :published, ->{ where(published: true) }
     scope :himself, ->(o) { where.not(id: o.id) }
 
-    def to_s
-      title
-    end
+    # def to_param
+    #   "#{id} #{translation.slug}".parameterize
+    # end
   end
 end
