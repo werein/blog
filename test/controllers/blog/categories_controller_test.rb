@@ -19,12 +19,11 @@ module Blog
       assert_template :show
       assigns(:category).wont_be_nil
       assigns(:category).must_equal category
-      assigns(:posts).wont_be_nil
-      assigns(:posts).must_equal category.posts
     end
 
-    it "should update post w valid attributes" do
-      patch :update, use_route: :blog_engine, id: category, category: { translations: [] }
+    it "should update category w valid attributes" do
+      patch :update, use_route: :blog_engine, id: category, category: { translations_attributes: [ attributes_for(:category_cs_translation) ] }
+      assigns(:category).errors.full_messages.must_be :empty?
       assert_response :redirect
       assert_redirected_to category_path(assigns(:category))
       assert_equal 'Category was successfully updated.', flash[:notice]

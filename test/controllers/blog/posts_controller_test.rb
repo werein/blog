@@ -16,22 +16,23 @@ module Blog
 
     it "should get index" do 
       get :index, use_route: :blog_engine
+      assigns(:posts).wont_be_nil
       assert_response :success
       assert_template :index
-      assigns(:posts).wont_be_nil
     end
 
     it "should get new" do 
       get :new, use_route: :blog_engine
+      assigns(:post).wont_be_nil
       assert_response :success
       assert_template :new
-      assigns(:post).wont_be_nil
     end
 
     it "should create post w valid attributes" do 
       assert_difference('Blog::Post.count') do
         post :create, use_route: :blog_engine, post: post_attr
       end
+      assigns(:post).errors.full_messages.must_be :empty?
       assert_response :redirect
       assert_redirected_to post_path(assigns(:post))
       assert_equal 'Post was successfully created.', flash[:notice]
@@ -41,38 +42,41 @@ module Blog
       assert_no_difference('Blog::Post.count') do
         post :create, use_route: :blog_engine, post: invalid_attr
       end
+      assigns(:post).errors.full_messages.wont_be :empty?
       assert_response :success
       assert_template :new
     end
 
     it "should show post" do 
-      get :show, use_route: :blog_engine, id: @post.slug
-      assert_response :success
-      assert_template :show
+      get :show, use_route: :blog_engine, id: @post
       assigns(:post).wont_be_nil
       assigns(:post).must_equal @post
+      assert_response :success
+      assert_template :show
     end
 
     it "should get edit" do 
       get :edit, use_route: :blog_engine, id: @post
-      assert_response :success
-      assert_template :edit
       assigns(:post).wont_be_nil
       assigns(:post).must_equal @post
+      assert_response :success
+      assert_template :edit
     end
 
     it "should update post w valid attributes" do
-      patch :update, use_route: :blog_engine, id: @post, post: { translations_attributes: [ attributes_for(:post_translation) ] }
+      patch :update, use_route: :blog_engine, id: @post, post: { translations_attributes: [ attributes_for(:post_cs_translation) ] }
+      assigns(:post).errors.full_messages.must_be :empty?
       assert_response :redirect
       assert_redirected_to post_path(assigns(:post))
       assert_equal 'Post was successfully updated.', flash[:notice]
     end
 
     it "shouldn't update post w invalid attributes" do
-      patch :update, use_route: :blog_engine, id: @post, post: invalid_attr
-      # expecting <"edit"> but rendering with <[]>
-      # assert_template :edit
+      patch :update, use_route: :blog_engine, id: @post, post: { translations_attributes: [ attributes_for(:post_translation) ] }
+      assigns(:post).errors.full_messages.wont_be :empty?
       assigns(:post).must_equal @post
+      assert_response :success
+      assert_template :edit
     end
 
     it "should destroy post" do 

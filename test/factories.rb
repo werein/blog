@@ -10,7 +10,7 @@ end
 FactoryGirl.define do
   factory :post, class: Blog::Post do
     # image { fixture_file_upload('test/data/mac.png') }
-    translations {[ association(:post_translation), association(:post_cs_translation)]}
+    translations {[ association(:post_translation)]}
     categories {[ association(:category) ]}
   end
 
@@ -31,7 +31,7 @@ FactoryGirl.define do
   factory :category, class: Blog::Category do 
     # image { fixture_file_upload('test/data/mac.png') }
     ancestry nil
-    translations {[ association(:category_translation), association(:category_cs_translation) ]}
+    translations {[ association(:category_translation)] }
   end
 
   factory :category_translation, class: Blog::Category::Translation do
