@@ -20,3 +20,5 @@ gem 'ckeditor-outsourced', git: 'git@git.imin.cz:project/ckeditor-outsourced.git
 
 gem 'core', git: 'git@git.imin.cz:project/core.git', branch: 'master'
 gem 'auth', git: 'git@git.imin.cz:project/auth.git', branch: 'master'
+
+gem 'ckeditor', git: 'https://github.com/galetahub/ckeditor.git', branch: 'master'
