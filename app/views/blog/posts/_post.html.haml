@@ -1,5 +1,5 @@
 %article.post
-  = manage_icons post, hide: [:new, :list]
+  = manage_icons post, except: [:new, :list]
   .row
     - col = post.image? ? 'col-md-7' : 'col-md-12'
     - if post.image?

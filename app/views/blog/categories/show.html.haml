@@ -5,6 +5,6 @@
   = render @posts
   = paginate @posts
 
-.sidebar.right.col-md-4
+.sidebar.sidebar-right.col-md-4
   = auto_discovery_link_tag(:atom, posts_path(:atom))
   = render_cell 'blog/category', :show, view: :accordion_menu
