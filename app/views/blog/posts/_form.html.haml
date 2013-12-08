@@ -8,7 +8,7 @@
 
   %header
     %h1= t '.translations.title'
-    = f.link_to_add gt('plus','.translations.new'), :translations, class: 'translations btn btn-info pull-right'
+    = f.link_to_add gt('plus', t('.translations.new')), :translations, class: 'translations btn btn-info pull-right'
   = localization_bar @post
   
   .tab-content.translations
