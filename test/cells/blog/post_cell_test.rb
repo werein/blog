@@ -17,10 +17,5 @@ module Blog
       render_cell('blog/post', :related, post: post1).must_include 'Apple iPhone 5'
       render_cell('blog/post', :related, post: post1).wont_include 'Apple iPad'
     end
-
-    # it "should show categories" do 
-    #   category = create(:category)
-    #   render_cell('blog/posts', :categories).must_include 'Apple iPhone'
-    # end
   end
 end
