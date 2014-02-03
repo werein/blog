@@ -1,5 +1,7 @@
 require 'test_helper'
- 
+
+require_dependency "blog/application_controller"
+
 module Blog
   class StubbedController < ApplicationController
     def test_ability
