@@ -1,6 +1,9 @@
 ---
 en:
   blog:
+    categories:
+      update:
+        notice: Category was successfully updated.
     category:
       accordion_menu:
         cell:
@@ -16,6 +19,10 @@ en:
         cell:
           title: Posts
     posts:
+      create:
+        notice: Post was successfully created.
+      destroy:
+        notice: Post was successfully deleted.
       edit:
         title: Edit post
       form:
@@ -31,3 +38,5 @@ en:
         published: before %{at}
       show:
         published: Published before %{at}
+      update:
+        notice: Post was successfully updated.
