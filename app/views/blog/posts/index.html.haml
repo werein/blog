@@ -1,8 +1,9 @@
-%section#content.col-md-8
-  %header.title
+#content.col-md-8
+  %header.page-header.manage-header
     %h1= t '.title'
     = create_button Blog::Post
-  = render @posts
+  %section.articles
+    = render @posts
   = paginate @posts
 
 .sidebar.sidebar-right.col-md-4

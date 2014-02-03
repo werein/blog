@@ -1,8 +1,9 @@
-%section#content.col-md-8
-  %header.title
+#content.col-md-8
+  %header.page-header.manage-header
     %h1= editable @category, :title, nested: :translations, nid: @category.translation.id, placement: :bottom
     = create_button Blog::Post
-  = render @posts
+  %section.articles
+    = render @posts
   = paginate @posts
 
 .sidebar.sidebar-right.col-md-4
