@@ -1,45 +1,48 @@
+---
 en:
-  created_updated_at: &cuat
-    created_at: Created at
-    updated_at: Updated at
   activerecord:
+    attributes:
+      blog/category:
+        created_at: Created at
+        image: Image
+        parent: Parent
+        posts: Posts
+        translations: Translations
+        updated_at: Updated at
+      blog/category/translation:
+        content: Content
+        created_at: Created at
+        locale: Locale
+        title: Title
+        updated_at: Updated at
+      blog/post:
+        categories: Categories
+        created_at: Created at
+        image: Image
+        translations: Translations
+        updated_at: Updated at
+      blog/post/translation:
+        content: Content
+        created_at: Created at
+        locale: Locale
+        title: Title
+        updated_at: Updated at
     models:
-      translation: &translation
-        one: Translation
-        other: Translations     
       blog:
         one: Blog
         other: Blog
-      blog/post:
-        one: Post
-        other: Posts
-      blog/post/translation:
-        <<: *translation
       blog/category:
         one: Category
         other: Categories
       blog/category/translation:
-        <<: *translation
-
-    attributes:
+        one: Translation
+        other: Translations
       blog/post:
-        image: Image
-        translations: Translations
-        categories: Categories
-        <<: *cuat
+        one: Post
+        other: Posts
       blog/post/translation:
-        title: Title
-        locale: Locale
-        content: Content
-        <<: *cuat
-      blog/category:
-        image: Image
-        parent: Parent
-        translations: Translations
-        posts: Posts
-        <<: *cuat
-      blog/category/translation:
-        title: Title
-        locale: Locale
-        content: Content
-        <<: *cuat
+        one: Translation
+        other: Translations
+      translation:
+        one: Translation
+        other: Translations

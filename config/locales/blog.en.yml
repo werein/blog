@@ -1,34 +1,33 @@
-# config/locales/en.yml
+---
 en:
   blog:
+    category:
+      accordion_menu:
+        cell:
+          title: Categories
+      show:
+        cell:
+          title: Categories
+    post:
+      related:
+        cell:
+          title: Related
+      show:
+        cell:
+          title: Posts
     posts:
+      edit:
+        title: Edit post
+      form:
+        submit: Submit
+        translations:
+          new: New translation
+          title: Translations
       index:
         title: Posts
       new:
         title: New post
-        rails_admin: If you want to create post in admin area, please click here.
-      create:
-        notice: Post was successfully created.
-      show:
-        published: 'Published before %{at}'
-      edit:
-        title: Edit post
-        rails_admin: If you want to update post in admin area, please click here.
-      update:
-        notice: Post was successfully updated.
-      destroy:
-        notice: Post was successfully deleted.
-      form:
-        translations:
-          title: Translations
-          new: New translation
       post:
-        published: 'before %{at}'
-    post:
-      new: Create new post
-    cells:
-      categories: Categories
-      related: Related posts
-    categories:
-      update:
-        notice: Category was successfully updated.
+        published: before %{at}
+      show:
+        published: Published before %{at}

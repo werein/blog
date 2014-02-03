@@ -1,11 +1,18 @@
+---
 en:
   enumerize:
-    locale: &locale
+    blog/category/translation:
       locale:
         cs: Czech
-        en: English
         de: Germany
-    blog/category/translation:
-      <<: *locale
+        en: English
     blog/post/translation:
-      <<: *locale
+      locale:
+        cs: Czech
+        de: Germany
+        en: English
+    locale:
+      locale:
+        cs: Czech
+        de: Germany
+        en: English

@@ -1,45 +1,48 @@
+---
 cs:
-  created_updated_at: &cuat
-    created_at: Vytvořeno
-    updated_at: Aktualizováno
   activerecord:
+    attributes:
+      blog/category:
+        created_at: Vytvořeno
+        image: Obrázek
+        parent: Nadřazená!!!
+        posts: Příspěvky
+        translations: Překlady
+        updated_at: Aktualizováno
+      blog/category/translation:
+        content: Obsah
+        created_at: Vytvořeno
+        locale: Jazyk
+        title: Název
+        updated_at: Aktualizováno
+      blog/post:
+        categories: Kategorie
+        created_at: Vytvořeno
+        image: Obrázek
+        translations: Překlady
+        updated_at: Aktualizováno
+      blog/post/translation:
+        content: Obsah
+        created_at: Vytvořeno
+        locale: Jazyk
+        title: Název
+        updated_at: Aktualizováno
     models:
-      translation: &translation
-        one: Překlad
-        other: Překlady     
       blog:
         one: Blog
         other: Blog
-      blog/post:
-        one: Příspěvek
-        other: Příspěvky
-      blog/post/translation:
-        <<: *translation
       blog/category:
         one: Kategorie
         other: Kategorie
       blog/category/translation:
-        <<: *translation
-
-    attributes:
+        one: Překlad
+        other: Překlady
       blog/post:
-        image: Obrázek
-        translations: Překlady
-        categories: Kategorie
-        <<: *cuat
+        one: Příspěvek
+        other: Příspěvky
       blog/post/translation:
-        title: Název
-        locale: Jazyk
-        content: Obsah
-        <<: *cuat
-      blog/category:
-        image: Obrázek
-        parent: Nadřazená!!!
-        translations: Překlady
-        posts: Příspěvky
-        <<: *cuat
-      blog/category/translation:
-        title: Název
-        locale: Jazyk
-        content: Obsah
-        <<: *cuat
+        one: Překlad
+        other: Překlady
+      translation:
+        one: Překlad
+        other: Překlady

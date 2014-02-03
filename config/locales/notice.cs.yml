@@ -1,0 +1,13 @@
+---
+cs:
+  blog:
+    categories:
+      update:
+        notice: Kategorie aktualizována
+    posts:
+      create:
+        notice: Příspěvek vytvořen
+      destroy:
+        notice: Příspěvek smazán
+      update:
+        notice: Příspěvek aktualizován

@@ -1,0 +1,36 @@
+base_locale: en
+locales: ['en', 'cs']
+
+# i18n data storage
+data:
+  # The default YAML adapter supports reading from and writing to YAML files
+  adapter: yaml
+  # a list of file globs to read from per-locale
+  read: 
+    # this one is default:
+    - 'config/locales/%{locale}.yml'
+    # add this one to also read from namespaced files, e.g. simple_form.en.yml:
+    - 'config/locales/*.%{locale}.yml'
+  # a list of {key pattern => file} routes, matched top to bottom
+  write:
+    # write every namespace to its own file:
+    - ['blog.*', 'config/locales/blog.%{locale}.yml']
+    - ['activerecord.*', 'config/locales/activerecord.%{locale}.yml']
+    - ['routes.*', 'config/locales/routes.%{locale}.yml']
+    - ['enumerize.*', 'config/locales/enumerize.%{locale}.yml']
+    - ['**.notice', 'config/locales/notice.%{locale}.yml']
+    # this is the default catch-all:
+    - 'config/locales/%{locale}.yml' # path is short for ['*', path]
+
+# i18n usage search in source
+search:
+  # explicitly exclude files (default: blank = exclude no files)
+  exclude:
+    - '*_controller.rb'
+
+# directories containing relative keys
+relative_roots:
+  # default:
+  - app/views
+  # add a custom one:
+  - app/cells

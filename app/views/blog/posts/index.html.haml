@@ -1,6 +1,6 @@
 #content.col-md-8
   %header.page-header.manage-header
-    %h1= t '.title'
+    %h1= title t('.title')
     = create_button Blog::Post
   %section.articles
     = render @posts
