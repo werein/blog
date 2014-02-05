@@ -1,0 +1,82 @@
+// This is a manifest file that'll be compiled into application.css, which will include all the files
+// listed below.
+//
+// Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+// or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+//
+// You're free to add application-wide styles to this file and they'll appear at the top of the
+// compiled file, but it's generally better to create a new file per style scope.
+
+// Everything
+#blog-posts, #blog-categories
+  #main-content
+    header.main
+      .content
+        @extend .page-header
+        @extend .manage-header
+
+// Index and show
+#blog-posts.index, #blog-posts.show, #blog-categories.show
+  #main-content
+    +make-md-column(8)
+  .sidebar
+    +make-md-column(4)
+
+// New and edit
+#blog-posts.new, #blog-posts.edit, #blog-categories.new, #blog-categories.edit
+  #main-content
+    +make-md-column(12)
+
+// Show - Article
+#blog-posts.show
+  article.post
+    .post-time
+      text-align: right
+    .post-ilustration
+      display: none
+    .post-content
+      margin-top: 10px
+    footer.post
+      margin-top: 20px
+      padding-top: 20px
+      border-top: solid 2px #eee
+    .ilustrated
+      .post-ilustration
+        display: block
+        margin-top: 10px
+        padding-bottom: 10px
+        border-bottom: solid 2px #eee
+        img
+          @extend .img-responsive
+
+// Index and show - Article
+#blog-posts.index, #blog-categories.show
+  article.post
+    @extend .manage-header
+    margin-top: 20px
+    padding-bottom: 10px
+    border-bottom: solid 2px #eee
+    text-align: right
+    header.post
+      text-align: right
+    .post-ilustration
+      display: none
+    .post-content
+      margin-top: 10px
+      text-align: justify
+    footer.post
+      margin-top: 20px
+      padding-top: 20px
+      border-top: solid 2px #eee
+  article.post
+    > .ilustrated
+      +make-row
+      .post-ilustration
+        +make-md-column(5)
+        display: block
+        margin-top: 10px
+        padding-bottom: 10px
+      header.post
+        +make-md-column(7)
+      .post-content
+        +make-md-column(7)

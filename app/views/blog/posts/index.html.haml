@@ -1,11 +1,12 @@
-#content.col-md-8
-  %header.page-header.manage-header
-    %h1= title t('.title')
-    = create_button Blog::Post
-  %section.articles
+%section#main-content
+  %header.main
+    .content
+      %h1= title t('.title')
+      = create_button Blog::Post
+  #posts
     = render @posts
-  = paginate @posts
+    = paginate @posts
 
-.sidebar.sidebar-right.col-md-4
+.sidebar.sidebar-right
   = auto_discovery_link_tag :atom, posts_path(:atom)
   = render_cell 'blog/category', :show, view: :accordion_menu

@@ -1,12 +1,10 @@
 %article.post
-  .manage-header= manage_icons post, except: [:new, :list]
-  .row
-    - col = post.image? ? 'col-md-7' : 'col-md-12'
-    - if post.image?
-      .ilustration.col-md-5= link_to image_tag(post.image.landscape.thumb, class: 'img-responsive'), post if post.image?
-    %div{class: col}
-      %header.right
+  %div{class: ('ilustrated' if post.image?)}
+    = manage_icons post, except: [:new, :list]
+    .post-ilustration= link_to image_tag(post.image.landscape.thumb, class: 'img-responsive'), post
+    %header.post
+      .content
         %h2
           %small= t '.published', at: time_ago_in_words(post.created_at)
           = editable post, :title, nested: :translations, nid: post.translation.id, e: link_to(post.title, post)
-      .content.justify= extract post.content, truncate: 190
+    .post-content= extract post.content, truncate: 190
