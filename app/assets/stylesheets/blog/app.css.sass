@@ -8,26 +8,26 @@
 // compiled file, but it's generally better to create a new file per style scope.
 
 // Everything
-#blog-posts, #blog-categories
+#blog
   #main-content
     header.main
       .content
         @extend .manage-header
 
 // Index and show
-#blog-posts.index, #blog-posts.show, #blog-categories.show
+#blog.posts.index, #blog.posts.show, #blog.categories.show
   #main-content
     +make-md-column(8)
   .sidebar
     +make-md-column(4)
 
 // New and edit
-#blog-posts.new, #blog-posts.edit, #blog-categories.new, #blog-categories.edit
+#blog.posts.new, #blog.posts.edit, #blog.categories.new, #blog.categories.edit
   #main-content
     +make-md-column(12)
 
 // Show - Article
-#blog-posts.show
+#blog.posts.show
   article.post
     .post-time
       text-align: right
@@ -49,7 +49,7 @@
           @extend .img-responsive
 
 // Index and show - Article
-#blog-posts.index, #blog-categories.show
+#blog.posts.index, #blog.categories.show
   article.post
     @extend .manage-header
     margin-top: 20px
