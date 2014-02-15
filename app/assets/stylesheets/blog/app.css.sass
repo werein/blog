@@ -7,40 +7,34 @@
 // You're free to add application-wide styles to this file and they'll appear at the top of the
 // compiled file, but it's generally better to create a new file per style scope.
 
-// Everything
-#blog
-  #main-content
-    header.main
-      .content
-        @extend .manage-header
-
-// Index and show
+// // Index and show
 #blog.posts.index, #blog.posts.show, #blog.categories.show
-  #main-content
+  #content
     +make-md-column(8)
   .sidebar
     +make-md-column(4)
 
 // New and edit
 #blog.posts.new, #blog.posts.edit, #blog.categories.new, #blog.categories.edit
-  #main-content
+  #content
     +make-md-column(12)
 
 // Show - Article
 #blog.posts.show
   article.post
-    .post-time
-      text-align: right
-    .post-ilustration
-      display: none
-    .post-content
-      margin-top: 10px
-    footer.post
-      margin-top: 20px
-      padding-top: 20px
-      border-top: solid 2px #eee
-    .ilustrated
-      .post-ilustration
+    > .wrap
+      > .time
+        text-align: right
+      > .ilustration
+        display: none
+      > .content
+        margin-top: 10px
+      > footer
+        margin-top: 20px
+        padding-top: 20px
+        border-top: solid 2px #eee
+    > .ilustrated
+      > .ilustration
         display: block
         margin-top: 10px
         padding-bottom: 10px
@@ -56,26 +50,27 @@
     padding-bottom: 10px
     border-bottom: solid 2px #eee
     text-align: right
-    header.post
-      text-align: right
-    .post-ilustration
-      display: none
-    .post-content
-      margin-top: 10px
-      text-align: justify
-    footer.post
-      margin-top: 20px
-      padding-top: 20px
-      border-top: solid 2px #eee
+    > .wrap
+      header
+        text-align: right
+      > .ilustration
+        display: none
+      > .content
+        margin-top: 10px
+        text-align: justify
+      > footer
+        margin-top: 20px
+        padding-top: 20px
+        border-top: solid 2px #eee
   article.post
     > .ilustrated
       +make-row
-      .post-ilustration
+      > .ilustration
         +make-md-column(5)
         display: block
         margin-top: 10px
         padding-bottom: 10px
-      header.post
+      > header
         +make-md-column(7)
-      .post-content
+      > .content
         +make-md-column(7)

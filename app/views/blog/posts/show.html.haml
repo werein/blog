@@ -1,15 +1,19 @@
-%section#main-content
-  %article.post
-    %div{class: ('ilustrated' if @post.image?)}
-      %header.main
-        .content
+- content_for :before_content do
+  #before-content
+    .wrapper
+      #before-content-content
+        %header.main
           = manage_icons @post
           %h1= editable @post, :title, nested: :translations, nid: @post.translation.id, placement: :bottom
-      .post-time
+
+%section#content
+  %article.post
+    .wrap{class: ('ilustrated' if @post.image?)}
+      .time
         %time{datetime: @post.created_at}= t '.published', at: time_ago_in_words(@post.created_at)
-      .post-ilustration= image_tag @post.image.original
-      .post-content= @post.content.html_safe
-      %footer.post
+      .ilustration= image_tag @post.image.original
+      .content= @post.content.html_safe
+      %footer
         #disqus_thread= disqus_thread.html_safe
 
 .sidebar.sidebar-right

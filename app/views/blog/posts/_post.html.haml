@@ -1,10 +1,9 @@
 %article.post
-  %div{class: ('ilustrated' if post.image?)}
+  .wrap{class: ('ilustrated' if post.image?)}
     = manage_icons post, except: [:new, :list]
-    .post-ilustration= link_to image_tag(post.image.landscape.thumb, class: 'img-responsive'), post
-    %header.post
-      .content
-        %h2
-          %small= t '.published', at: time_ago_in_words(post.created_at)
-          = editable post, :title, nested: :translations, nid: post.translation.id, e: link_to(post.title, post)
-    .post-content= extract post.content, truncate: 190
+    .ilustration= link_to image_tag(post.image.landscape.thumb, class: 'img-responsive'), post
+    %header
+      %h2
+        %small= t '.published', at: time_ago_in_words(post.created_at)
+        = editable post, :title, nested: :translations, nid: post.translation.id, e: link_to(post.title, post)
+    .content= extract post.content, truncate: 190
