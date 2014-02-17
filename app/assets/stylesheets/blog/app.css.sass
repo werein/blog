@@ -46,9 +46,10 @@
 #blog.posts.index, #blog.categories.show
   article.post
     @extend .manage-header
-    margin-top: 20px
-    padding-bottom: 10px
-    border-bottom: solid 2px #eee
+    padding-bottom: 20px
+    padding-top: 20px
+    border-bottom: solid 1px rgb(222, 222, 222)
+    border-top: solid 1px rgb(252, 252, 252)
     text-align: right
     > .wrap
       header
@@ -61,7 +62,7 @@
       > footer
         margin-top: 20px
         padding-top: 20px
-        border-top: solid 2px #eee
+        border-top: solid 1px #eee
   article.post
     > .ilustrated
       +make-row
@@ -74,3 +75,9 @@
         +make-md-column(7)
       > .content
         +make-md-column(7)
+  article.post:first-child
+    border-top: none
+    padding-top: 0
+  article.post:last-child
+    border-bottom: none
+    padding-bottom: 0
