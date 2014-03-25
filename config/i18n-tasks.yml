@@ -4,7 +4,7 @@ locales: ['en', 'cs']
 # i18n data storage
 data:
   # The default YAML adapter supports reading from and writing to YAML files
-  adapter: yaml
+  adapter: file_system
   # a list of file globs to read from per-locale
   read: 
     # this one is default:
