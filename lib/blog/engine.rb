@@ -1,5 +1,6 @@
 require 'core'
 require 'auth'
+require 'uppr'
 
 module Blog
   class Engine < ::Rails::Engine
