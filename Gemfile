@@ -16,31 +16,30 @@ gemspec
 # Use head version of engines
 gem 'core', 
   branch: 'master',
-  git: 'git@git.imin.cz:project/core.git'
+  git: 'git@bitbucket.org:werein/core.git'
 
 gem 'auth', 
   branch: 'master',
-  git: 'git@git.imin.cz:project/auth.git'
+  git: 'git@bitbucket.org:werein/auth.git'
 
 # Core dependencies
 gem 'ckeditor-outsourced', branch: 'master',
-  git: 'git@git.imin.cz:project/ckeditor-outsourced.git'
+  git: 'git@bitbucket.org:werein/ckeditor-outsourced.git'
 
 gem 'uploadable', branch: 'master',
-  git: 'git@git.imin.cz:project/uploadable.git'
+  git: 'git@bitbucket.org:werein/uploadable.git'
 
-gem 'extension-multiselect', branch: 'master',
-  git: 'git@git.imin.cz:project/extension-multiselect.git'
+gem 'multiselectjs', branch: 'master',
+  git: 'git@bitbucket.org:werein/multiselectjs.git'
 
 gem 'sidrjs-rails', branch: 'master',
-  git: 'git@git.imin.cz:project/sidrjs-rails.git'
+  git: 'git@bitbucket.org:werein/sidrjs-rails.git'
 
 # Test dependencies
 gem 'testable', 
   branch: 'master',
-  git: 'git@git.imin.cz:project/testable.git'
+  git: 'git@bitbucket.org:werein/testable.git'
 
 # Demo dependencies 
-gem 'compass-rails', github: 'Compass/compass-rails'
-gem 'bootstrap-sass', '~> 3.0'
-gem 'i18n-tasks', '~> 0.2'
+gem 'compass-rails'
+gem 'bootstrap-sass', '~> 3.1'
