@@ -17,7 +17,21 @@ Gem::Specification.new do |s|
   s.test_files  = Dir["test/*.*" ,"test/{cells,controllers,data,helpers,integration,models}/**/*","test/dummy/*.*", "test/dummy/{app,bin,config,db,lib}/**/*"]
 
   s.add_dependency "rails", "~> 4.0"
-  s.add_dependency "core", "~> 1.1"
+  s.add_dependency "foundationstone", "~> 0.0.1"
   s.add_dependency "auth", "~> 1.1"
+  s.add_dependency 'globalize', '~> 4.0.0'
+  # s.add_dependency "globalize-missing", "~> 1.0.0" 
+  s.add_dependency 'cells'
+  s.add_dependency 'friendly_id'
+  s.add_dependency 'kaminari'
+  s.add_dependency 'ancestry'
   s.add_dependency 'uppr', '~> 1.0'
+  s.add_dependency 'simple_form'
+  s.add_dependency 'nested_form'
+  s.add_dependency 'ckeditor'
+  s.add_dependency 'x-editable-rails'
+  s.add_dependency 'disqus'
+  s.add_dependency 'enumerize'
+
+  s.add_development_dependency 'tuberack'
 end

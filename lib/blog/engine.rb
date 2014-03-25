@@ -1,6 +1,18 @@
-require 'core'
+require 'foundationstone'
 require 'auth'
+require 'globalize'
+require 'friendly_id'
+require 'kaminari'
+require 'ancestry'
+require 'cells'
 require 'uppr'
+require 'simple_form'
+require 'nested_form'
+require 'ckeditor'
+require 'x-editable-rails'
+require 'disqus'
+require 'enumerize'
+require 'route_translator'
 
 module Blog
   class Engine < ::Rails::Engine

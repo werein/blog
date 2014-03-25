@@ -2,7 +2,8 @@ module Blog
   class Post < ActiveRecord::Base
     translates :slug, :title, :content
     validates :translations, presence: :true
-    include Core::Concerns::Localizable
+    accepts_nested_attributes_for :translations, allow_destroy: true
+    # include Core::Concerns::Localizable
     
     # Use, when you want to remove id from url
     extend FriendlyId
@@ -11,7 +12,7 @@ module Blog
     has_and_belongs_to_many :categories
     validates :categories, presence: true
 
-    mount_uploader :image, Uploadable::Image
+    mount_uploader :image, Uppr::Image
     store_in_background :image
 
     paginates_per 10

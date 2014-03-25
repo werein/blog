@@ -1,10 +1,10 @@
 module Blog
   class CategoryCell < Cell::Rails
-    include CanCan::ControllerAdditions
-    include Core::ApplicationHelper
-    helper Core::ApplicationHelper
-    helper CategoriesHelper
-    append_view_path 'app/views'
+    # include CanCan::ControllerAdditions
+    # include Core::ApplicationHelper
+    # helper Core::ApplicationHelper
+    # helper CategoriesHelper
+    # append_view_path 'app/views'
 
     def show args = {}
       @categories = Blog::Category.roots.with_translations(I18n.locale)

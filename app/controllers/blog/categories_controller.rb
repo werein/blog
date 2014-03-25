@@ -7,7 +7,7 @@ module Blog
     respond_to :html, :json
 
     def show
-      @posts = @category.posts.with_translations(current_locale).latest.page(params[:page])
+      @posts = @category.posts.with_translations(I18n.locale).latest.page(params[:page])
       set_meta_tags title:        @category.title,
                     description:  @category.content,
                     keywords:     @category.title

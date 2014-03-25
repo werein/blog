@@ -9,7 +9,7 @@ module Blog
     respond_to :xml, :rss, :atom, only: :index
 
     def index
-      @posts = Post.with_translations(current_locale).latest.page(params[:page])
+      @posts = Post.with_translations(I18n.locale).latest.page(params[:page])
       respond_with @posts
     end
 

@@ -14,7 +14,7 @@
       .ilustration= image_tag @post.image.original
       .content= @post.content.html_safe
       %footer
-        #disqus_thread= disqus_thread.html_safe
+        #disqus_thread= # disqus_thread.html_safe
 
 .sidebar.sidebar-right
   = render_cell 'blog/category', :show, view: :accordion_menu

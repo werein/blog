@@ -1,7 +1,7 @@
 module Blog
   class Post::Translation < Globalize::ActiveRecord::Translation 
     extend Enumerize
-    include Core::Concerns::Slugged
+    # include Core::Concerns::Slugged
     validates :title, length: { maximum: 255 }, presence: true
     validates :content, presence: true
     validates :locale, presence: true, uniqueness: { scope: :blog_post_id }
@@ -14,5 +14,10 @@ module Blog
     def to_s 
       title
     end
+
+    private
+      def set_slug
+        self.slug = slug? ? slug.try(:parameterize) : to_s.try(:parameterize)
+      end
   end
 end

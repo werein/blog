@@ -1,9 +1,9 @@
 module Blog
   class PostCell < Cell::Rails
-    include CanCan::ControllerAdditions
-    include Core::ApplicationHelper
-    helper Core::ApplicationHelper
-    append_view_path 'app/views'
+    # include CanCan::ControllerAdditions
+    # include Core::ApplicationHelper
+    # helper Core::ApplicationHelper
+    # append_view_path 'app/views'
 
     def show args = {}
       @posts = Blog::Post.with_translations(I18n.locale).latest.limit(args[:limit] || 10)
