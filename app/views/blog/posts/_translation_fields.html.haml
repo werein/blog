@@ -1,0 +1,9 @@
+.nested-fields.tab-pane{id: "tab-#{f.index}", class: ('active' if f.index == 0)}
+  = f.input :title
+  = f.input :slug
+  = f.input :locale
+  = f.input :content_type
+  = f.input :md_file
+  = f.input :md_remote
+  = f.input :html, as: :ckeditor
+  .remove= link_to_remove_association t('.translation.remove'), f, class: 'btn btn-danger'

@@ -1,17 +1,14 @@
-- content_for :before_content do
-  #before-content
-    .wrapper
-      #before-content-content
-        %header.main
-          %h1= editable @category, :title, nested: :translations, nid: @category.translation.id, placement: :bottom
-          = create_button Blog::Post
+.category-content= @category.content.try(:html_safe)
+%section#posts
+  = render @posts
+  = paginate @posts
 
-%section#content
-  .category-content= @category.content.try(:html_safe)
-  #posts
-    = render @posts
-    = paginate @posts
 
-.sidebar.sidebar-right
+- content_for :bow do
+  %header.main
+    %h1= editable @category, :title, nested: :translations, nid: @category.translation.id, placement: :bottom
+    = create_button Blog::Post
+
+- content_for :starboard do
   = auto_discovery_link_tag(:atom, posts_path(:atom))
   = render_cell 'blog/category', :show, view: :accordion_menu

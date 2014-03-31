@@ -1,6 +1,7 @@
 require 'foundationstone'
 require 'auth'
 require 'globalize'
+require 'globalize/missing'
 require 'friendly_id'
 require 'kaminari'
 require 'ancestry'
@@ -8,11 +9,14 @@ require 'cells'
 require 'uppr'
 require 'simple_form'
 require 'nested_form'
+require 'formtastic'
+require 'cocoon'
 require 'ckeditor'
-require 'x-editable-rails'
+require 'ckeditor/outsourced'
 require 'disqus'
 require 'enumerize'
 require 'route_translator'
+require 'select2-rails'
 
 module Blog
   class Engine < ::Rails::Engine

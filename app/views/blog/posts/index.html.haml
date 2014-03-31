@@ -1,16 +1,12 @@
-- content_for :before_content do
-  #before-content
-    .wrapper
-      #before-content-content
-        %header.main
-          %h1= t '.title'
-          = create_button Blog::Post
+%section#posts
+  = render @posts
+  = paginate @posts
 
-%section#content
-  #posts
-    = render @posts
-    = paginate @posts
+- content_for :bow do
+  %header.main
+    %h1= t '.title'
+    = create_button Blog::Post
 
-.sidebar.sidebar-right
+- content_for :starboard do
   = auto_discovery_link_tag :atom, posts_path(:atom)
   = render_cell 'blog/category', :show, view: :accordion_menu

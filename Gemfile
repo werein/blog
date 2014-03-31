@@ -13,27 +13,14 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
-# Use head version of engines
-gem 'foundationstone', github: 'werein/foundationstone', branch: 'master'
-
-gem 'auth', 
-  branch: 'foundationstone',
-  git: 'git@bitbucket.org:werein/auth.git'
-
-# Core dependencies
-# gem 'ckeditor-outsourced', branch: 'master',
-#   git: 'git@bitbucket.org:werein/ckeditor-outsourced.git'
-
-gem 'multiselectjs', branch: 'master',
-  git: 'git@bitbucket.org:werein/multiselectjs.git'
-gem 'testable', branch: 'master',
-  git: 'git@bitbucket.org:werein/testable.git'
-
-gem 'sidrjs-rails', branch: 'master',
-  git: 'git@bitbucket.org:werein/sidrjs-rails.git'
-
 # Demo dependencies 
 gem 'compass-rails'
 gem 'bootstrap-sass', '~> 3.1'
 gem 'sass-rails', '~> 4.0.2'
 gem 'rails_admin'
+gem 'x-editable-rails'
+gem 'simple_form', github: 'plataformatec/simple_form'
+
+gem 'foundationstone', branch: :master, github: 'werein/foundationstone'
+gem 'auth', branch: :master, git: 'git@bitbucket.org:werein/auth.git'
+gem 'ckeditor-outsourced', branch: :master, git: 'git@bitbucket.org:werein/ckeditor-outsourced.git'

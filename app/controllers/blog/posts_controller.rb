@@ -55,7 +55,7 @@ module Blog
       end
 
       def post_params
-        params.require(:post).permit(:image, category_ids: [], translations_attributes: [:id, :title, :slug, :locale, :content, :_destroy]) if params[:post]
+        params.require(:post).permit(:image, category_ids: [], translations_attributes: [:id, :title, :slug, :locale, :html, :content_type, :md_file, :md_remote, :_destroy]) if params[:post]
       end
   end
 end

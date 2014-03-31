@@ -1,0 +1,16 @@
+
+// // Index and show
+#blog.posts.index, #blog.posts.show, #blog.categories.show
+  #content
+    +make-md-column(8)
+  .sidebar
+    +make-md-column(4)
+
+// New and edit
+#blog.posts.new, #blog.posts.edit, #blog.posts.create, #blog.posts.update
+  #content
+    +make-md-column(12)
+
+#blog.categories.new, #blog.categories.edit, #blog.categories.create, #blog.categories.update
+  #content
+    +make-md-column(12)

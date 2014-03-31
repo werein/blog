@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028140651) do
+ActiveRecord::Schema.define(version: 20140331172612) do
 
   create_table "auth_assignments", force: true do |t|
     t.integer  "user_id"
@@ -109,9 +109,13 @@ ActiveRecord::Schema.define(version: 20131028140651) do
     t.string   "locale",       null: false
     t.string   "slug"
     t.string   "title"
-    t.text     "content"
+    t.text     "html"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "md_file"
+    t.string   "md_file_tmp"
+    t.string   "md_remote"
+    t.string   "content_type"
   end
 
   add_index "blog_post_translations", ["blog_post_id"], name: "index_blog_post_translations_on_blog_post_id"

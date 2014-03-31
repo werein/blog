@@ -14,8 +14,8 @@ if Rails.env.development? and Blog::Post.count == 0
   
   Blog::Post.create!(
     published: true,
-    translations_attributes: [{ title: 'Apple iPhone', locale: 'cs', slug: 'apple-iphone', content: 'Mobilní telefon od společnosti Apple' },
-                              { title: 'Apple iPhone', locale: 'en', slug: 'apple-iphone', content: 'Mobile phone created by Apple'} ],
+    translations_attributes: [{ title: 'Apple iPhone', locale: 'cs', slug: 'apple-iphone', content_type: 'html', html: 'Mobilní telefon od společnosti Apple' },
+                              { title: 'Apple iPhone', locale: 'en', slug: 'apple-iphone', content_type: 'html', html: 'Mobile phone created by Apple'} ],
     category_ids: [category.id])
 end
 

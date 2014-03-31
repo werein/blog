@@ -1,23 +1,11 @@
 = rails_admin_alert @post
-
-= simple_nested_form_for @post, nested_wrapper: :bootstrap3_horizontal do |f|
+= simple_form_for @post do |f|
   = render 'foundationstone/error', object: @post
-
   = f.input :image
-  = f.association :categories, input_html: { class: 'multiselect' }
-
-  %header
-    %h1= t '.translations.title'
-    = f.link_to_add gt('plus', t('.translations.new')), :translations, class: 'translations btn btn-info pull-right'
-  = localization_bar @post
-  
-  .tab-content.translations
-    = f.simple_fields_for :translations, nested_wrapper: false do |t|
-      .fields.tab-pane{id: "translation_#{t.index}", class: ("active" if t.index == 0)}
-        .right
-          = t.link_to_remove si('btn btn-danger','glyphicon glyphicon-remove')
-        = t.input :title
-        = t.input :slug
-        = t.input :locale
-        = t.input :content, as: :ckeditor
+  = f.association :categories
+  #translations.tab-content
+    = localization_bar @post
+    = f.simple_fields_for :translations do |translation|
+      = render 'translation_fields', f: translation
+    .links= link_to_add_association t('.translation.add'), f, :translations, class: 'btn btn-default'
   = f.button :submit, t('.submit'), class: 'btn btn-block btn-large btn-info'

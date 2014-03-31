@@ -1,6 +1,6 @@
 module Blog
   class Post < ActiveRecord::Base
-    translates :slug, :title, :content
+    translates :slug, :title, :html, :content_type, :md_file, :md_remote, :content
     validates :translations, presence: :true
     accepts_nested_attributes_for :translations, allow_destroy: true
     # include Core::Concerns::Localizable
