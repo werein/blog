@@ -28,7 +28,7 @@ module Blog
       when 'html'
         html.html_safe
       when 'file', 'remote'
-        markdown
+        markdown.html_safe
       end
     end
 
