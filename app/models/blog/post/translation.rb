@@ -26,9 +26,9 @@ module Blog
     def content
       case content_type
       when 'html'
-        html.html_safe
+        html.try(:html_safe)
       when 'file', 'remote'
-        markdown.html_safe
+        markdown.try(:html_safe)
       end
     end
 
