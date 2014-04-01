@@ -3,7 +3,7 @@ module Blog
     # include CanCan::ControllerAdditions
     # include Core::ApplicationHelper
     # helper Core::ApplicationHelper
-    # helper CategoriesHelper
+    helper CategoriesHelper
     # append_view_path 'app/views'
 
     def show args = {}
