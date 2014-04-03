@@ -40,5 +40,6 @@ class ActiveSupport::TestCase
   include Blog::Engine.routes.url_helpers
 end
 
-
 WebMock.disable_net_connect! allow: %w(coveralls.io)
+
+Blog.user_class = 'Tuberack::DummyUser'

@@ -7,7 +7,7 @@
 - content_for :bow do
   %header.main
     %h1= editable @category, :title, nested: :translations, nid: @category.translation.id, placement: :bottom
-    = create_button Blog::Post
+    = manage_create_button Blog::Post
 
 - content_for :starboard do
   = auto_discovery_link_tag(:atom, posts_path(:atom))

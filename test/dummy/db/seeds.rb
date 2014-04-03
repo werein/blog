@@ -18,6 +18,3 @@ if Rails.env.development? and Blog::Post.count == 0
                               { title: 'Apple iPhone', locale: 'en', slug: 'apple-iphone', content_type: 'html', html: 'Mobile phone created by Apple'} ],
     category_ids: [category.id])
 end
-
-# Default Auth seed data
-Auth::Engine.load_seed

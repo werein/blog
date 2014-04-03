@@ -17,8 +17,7 @@ Gem::Specification.new do |s|
   s.test_files  = Dir['test/*.*' ,'test/{cells,controllers,data,helpers,integration,models}/**/*','test/dummy/*.*', 'test/dummy/{app,bin,config,db,lib}/**/*']
 
   s.add_dependency 'rails', '~> 4.0'
-  s.add_dependency 'foundationstone', '~> 0.0.1'
-  s.add_dependency 'auth', '~> 1.1'
+  s.add_dependency 'foundationstone', '~> 0.0.3'
   s.add_dependency 'globalize', '~> 4.0.0'
   s.add_dependency 'globalize-missing', '~> 1.0.0' 
   s.add_dependency 'cells'
@@ -36,6 +35,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'select2-rails'
   s.add_dependency 'kramdown'
   s.add_dependency 'coderay'
+  s.add_dependency 'cancancan', '~> 1.7'
 
   s.add_development_dependency 'tuberack'
 end

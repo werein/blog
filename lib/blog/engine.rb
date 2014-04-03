@@ -1,5 +1,4 @@
 require 'foundationstone'
-require 'auth'
 require 'globalize'
 require 'globalize/missing'
 require 'friendly_id'
@@ -17,8 +16,11 @@ require 'disqus'
 require 'enumerize'
 require 'route_translator'
 require 'select2-rails'
+require 'cancancan'
 
 module Blog
+  mattr_accessor :user_class
+
   class Engine < ::Rails::Engine
     isolate_namespace Blog
 

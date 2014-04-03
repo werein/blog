@@ -22,5 +22,4 @@ gem 'x-editable-rails'
 gem 'simple_form', github: 'plataformatec/simple_form'
 
 gem 'foundationstone', branch: :master, github: 'werein/foundationstone'
-gem 'auth', branch: :master, git: 'git@bitbucket.org:werein/auth.git'
 gem 'ckeditor-outsourced', branch: :master, git: 'git@bitbucket.org:werein/ckeditor-outsourced.git'

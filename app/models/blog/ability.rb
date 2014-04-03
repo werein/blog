@@ -3,7 +3,7 @@ module Blog
     include CanCan::Ability
 
     def initialize(user)
-      user ||= Auth::User.new
+      user ||= Blog.user_class.new
 
       cannot :manage, :all
       can :read, :all
