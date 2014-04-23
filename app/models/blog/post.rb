@@ -9,7 +9,7 @@ module Blog
     extend FriendlyId
     friendly_id :title, use: :slugged
 
-    has_and_belongs_to_many :categories
+    has_and_belongs_to_many :categories, class_name: 'Blog::Category'
     validates :categories, presence: true
 
     mount_uploader :image, Uppr::Image
