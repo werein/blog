@@ -5,7 +5,7 @@ module Blog
     let(:category)        { create(:category) }
     let(:post)            { create(:post, categories: [category]) }
     let(:category_attr)   { attributes_for(:post, translations_attributes: [ attributes_for(:post_translation) ], category_ids: [ category.id ]).except(:translations, :categories) }
-    let(:current_user)    { mock 'user' }
+    let(:current_user)    { Tuberack::DummyUser.new }
 
     before do
       can Blog::Category
