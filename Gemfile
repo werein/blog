@@ -20,7 +20,7 @@ gem 'sass-rails', '~> 4.0.2'
 gem 'rails_admin'
 gem 'x-editable-rails'
 gem 'ckeditor-outsourced'
-gem 'simple_form', github: 'plataformatec/simple_form'
+gem 'simple_form', '~> 3.1.0.rc2'
 
 gem 'tuberack', branch: :master, github: 'werein/tuberack'
 gem 'foundationstone', branch: :master, github: 'werein/foundationstone'
