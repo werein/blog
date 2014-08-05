@@ -10,5 +10,5 @@
 # Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 # about supported directives.
 #
-#= require blog/requirements
-#= require blog/default
+#= require blog/dependencies
+#= require blog
