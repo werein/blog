@@ -17,7 +17,7 @@ module Blog
     enumerize :content_type, in: %w(file remote html)
 
     mount_uploader :md_file, MarkdownUpploader
-    store_in_background :md_file
+    process_in_background :md_file
 
     def to_s 
       title
