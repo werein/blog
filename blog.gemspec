@@ -36,4 +36,13 @@ Gem::Specification.new do |s|
   s.add_dependency 'kramdown'
   s.add_dependency 'coderay'
   s.add_dependency 'cancancan', '~> 1.9'
+
+  s.add_development_dependency 'tuberack', '~> 1.2.0'
+  s.add_development_dependency 'minitest-rails'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'webmock'
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'mocha'
+  s.add_development_dependency 'shoulda'
+  s.add_development_dependency 'factory_girl_rails'
 end
