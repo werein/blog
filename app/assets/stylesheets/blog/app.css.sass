@@ -6,79 +6,9 @@
 //
 // You're free to add application-wide styles to this file and they'll appear at the top of the
 // compiled file, but it's generally better to create a new file per style scope.
+//
 
-// Show - Article
-#blog.posts.show
-  article.post
-    > .wrap
-      > .time
-        text-align: right
-      > .ilustration
-        display: none
-      > .content
-        margin-top: 10px
-      > footer
-        margin-top: 20px
-        padding-top: 20px
-        border-top: solid 2px #eee
-    > .ilustrated
-      > .ilustration
-        display: block
-        margin-top: 10px
-        padding-bottom: 10px
-        border-bottom: solid 2px #eee
-        img
-          @extend .img-responsive
-
-// Index and show - Article
-#blog.posts.index, #blog.categories.show
-  article.post
-    @extend .manage-header
-    padding-bottom: 20px
-    padding-top: 20px
-    border-bottom: solid 1px rgb(222, 222, 222)
-    border-top: solid 1px rgb(252, 252, 252)
-    text-align: right
-    > .wrap
-      header
-        text-align: right
-      > .ilustration
-        display: none
-      > .content
-        margin-top: 10px
-        text-align: justify
-      > footer
-        margin-top: 20px
-        padding-top: 20px
-        border-top: solid 1px #eee
-  article.post
-    > .ilustrated
-      +make-row
-      > .ilustration
-        +make-md-column(5)
-        display: block
-        margin-top: 10px
-        padding-bottom: 10px
-      > header
-        +make-md-column(7)
-      > .content
-        +make-md-column(7)
-  article.post:first-child
-    border-top: none
-    padding-top: 0
-  article.post:last-child
-    border-bottom: none
-    padding-bottom: 0
-
-#blog
-  #translations
-    position: relative
-    fieldset
-      margin: 15px 0
-    .links
-      position: absolute
-      right: 0
-      top: 0
-    .remove
-      text-align: right
-      margin: 15px 0
+@import blog/dependencies
+@import foundationstone/dummy
+@import blog/dummy
+@import blog

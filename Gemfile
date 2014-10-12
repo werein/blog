@@ -13,14 +13,16 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
-# Demo dependencies 
-gem 'compass-rails'
-gem 'bootstrap-sass', '~> 3.1'
-gem 'sass-rails', '~> 4.0.2'
-gem 'rails_admin'
-gem 'x-editable-rails'
-gem 'ckeditor-outsourced'
-gem 'simple_form', github: 'plataformatec/simple_form'
+# These gems are used for passing tests and test/dummy
+group :development, :test do
+  gem 'tuberack', branch: :master, github: 'werein/tuberack'
+  gem 'foundationstone', branch: :develop, github: 'werein/foundationstone'
 
-gem 'tuberack', branch: :master, github: 'werein/tuberack'
-gem 'foundationstone', branch: :master, github: 'werein/foundationstone'
+  gem 'haml', '~> 4.0'
+  gem 'bootstrap-sass', '~> 3.2'
+  gem 'sass-rails', '~> 4.0.2'
+  gem 'rails_admin', '~> 0.6'
+  gem 'ckeditor-outsourced', '~> 1.1'
+  gem 'simple_form', '~> 3.1.0.rc2'
+  gem 'x-editable-rails', '~> 1.5'
+end

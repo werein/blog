@@ -40,7 +40,7 @@ module Blog
       def markdown
         text = case content_type
         when 'file'
-          File.open(md_file.current_path, 'rb') { |f| f.read } if md_file?
+          md_file.file.read if md_file?
         when 'remote'
           open(md_remote).read if md_remote?
         end

@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.name        = 'blog'
   s.version     = Blog::VERSION
   s.authors     = ['Jiri Kolarik']
-  s.email       = ['jiri.kolarik@imin.cz']
-  s.homepage    = 'http://werein.cz'
-  s.summary     = 'Blog engine for Project.'
-  s.description = 'Blog engine for Project.'
+  s.email       = ['jiri.kolarik@wereinhq.com']
+  s.homepage    = 'http://wereinhq.com'
+  s.summary     = 'Blog engine for Rails.'
+  s.description = 'Simple mountable Blog engine for Rails'
 
   s.files       = Dir['{app,config,db,lib}/**/*', 'LICENSE.txt', 'Rakefile', 'README.rdoc']
   s.test_files  = Dir['test/*.*' ,'test/{cells,controllers,data,helpers,integration,models}/**/*','test/dummy/*.*', 'test/dummy/{app,bin,config,db,lib}/**/*']
@@ -35,7 +35,14 @@ Gem::Specification.new do |s|
   s.add_dependency 'select2-rails'
   s.add_dependency 'kramdown'
   s.add_dependency 'coderay'
-  s.add_dependency 'cancancan', '~> 1.7'
+  s.add_dependency 'cancancan', '~> 1.9'
 
-  s.add_development_dependency 'tuberack'
+  s.add_development_dependency 'tuberack', '~> 1.2.0'
+  s.add_development_dependency 'minitest-rails'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'webmock'
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'mocha'
+  s.add_development_dependency 'shoulda'
+  s.add_development_dependency 'factory_girl_rails'
 end
